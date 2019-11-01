@@ -22,8 +22,8 @@
 -- luacheck: ignore 611
 
 local lpeg = require "lpeg"
-             require "LuaXml"
-             
+local xml  = require "LuaXml"
+
 -- **********************************************************************
 -- the following is the high level view of the LPeg code that follows it.
 -- If I could do folding captures with this, I would, but I can't so I
@@ -66,7 +66,7 @@ local path      = Cf(Ct("") * segment^1,doset)
 
 -- *******************************************************************
 
-function lxpath(doc,loc)
+return function(doc,loc)
   local segments = path:match(loc)
   assert(segments)
   
