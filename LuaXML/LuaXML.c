@@ -62,7 +62,7 @@ static const char* char2code(unsigned char ch, char buf[8]) {
 
 static size_t find(const char* s, const char* pattern, size_t start) {
 	const char* found =strstr(s+start, pattern);
-	return found ? found-s : strlen(s);
+	return found ? (size_t)(found-s) : strlen(s);
 }
 
 //--- internal tokenizer -------------------------------------------
@@ -281,7 +281,7 @@ int Xml_eval(lua_State *L) {
 	int firstStatement = 1;
 	while((token=Tokenizer_next(tok))!=0) if(token[0]==OPN) { // new tag found
 		if(lua_gettop(L)) {
-			int newIndex=lua_objlen(L,-1)+1;
+			int newIndex=lua_rawlen(L,-1)+1;
 			lua_pushnumber(L,newIndex);
 			lua_newtable(L);
 			lua_settable(L, -3);
@@ -333,7 +333,7 @@ int Xml_eval(lua_State *L) {
 		else break;
 	}
 	else { // read elements
-		lua_pushnumber(L,lua_objlen(L,-1)+1);
+		lua_pushnumber(L,lua_rawlen(L,-1)+1);
 		Xml_pushDecode(L, token, 0);
 		lua_settable(L, -3);
 	}
@@ -357,7 +357,7 @@ int Xml_load (lua_State *L) {
 	lua_pushlightuserdata(L,buffer);
 	lua_replace(L,1);
 	return Xml_eval(L);
-};
+}
 
 int Xml_registerCode(lua_State *L) {
     const char * decoded = luaL_checkstring(L,1);
@@ -402,7 +402,7 @@ int Xml_encode(lua_State *L) {
     return 1;
 }
 
-int _EXPORT luaopen_LuaXML_lib (lua_State* L) {
+int _EXPORT luaopen_LuaXML(lua_State* L) {
 	static const struct luaL_Reg funcs[] = {
 		{"load", Xml_load},
 		{"eval", Xml_eval},
@@ -410,7 +410,7 @@ int _EXPORT luaopen_LuaXML_lib (lua_State* L) {
 		{"registerCode", Xml_registerCode},
 		{NULL, NULL}
 	};
-	luaL_register(L, "xml", funcs);
+	luaL_newlib(L,funcs);
 	// register default codes:
 	if(!sv_code) {
 		sv_code=(char**)malloc(sv_code_capacity*sizeof(char*));
