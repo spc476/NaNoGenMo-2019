@@ -57,7 +57,7 @@ local S,P, R     = lpeg.S, lpeg.P,  lpeg.R
 local C,Ct,Cf,Cg = lpeg.C, lpeg.Ct, lpeg.Cf, lpeg.Cg
 
 local WS        = S(" \t")^0
-local ID        = C(R("AZ","az","09","__","--")^1)
+local ID        = C(R("AZ","az","09","__","--","::")^1)
 local text      = C((P(1) - P'"')^1)
 local value     = P'"' * text * P'"'
 local attribute = Cf(Ct("") * Cg(WS * P"@" * WS * ID * WS * P"=" * WS * value),doset)
