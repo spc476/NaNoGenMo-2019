@@ -1,0 +1,6 @@
+Translate a book into Toki Pona.
+
+http://tokipona.net/tp/Default.aspx
+
+vernunftzentrum.de /ckeen/phlog/2018-12-11-Miscellaneous-update.md     
+gopher://vernunftzentrum.de:70/0/ckeen/toki-musi.txt
