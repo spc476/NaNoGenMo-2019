@@ -42,6 +42,10 @@ THE SOFTWARE.
 #include <ctype.h>
 #include <stdlib.h>
 
+#if LUA_VERSION_NUM == 501
+#  define lua_rawlen(L,idx) lua_objlen((L),(idx))
+#endif
+
 static const char ESC=27;
 static const char OPN=28;
 static const char CLS=29;
@@ -402,7 +406,7 @@ int Xml_encode(lua_State *L) {
     return 1;
 }
 
-int _EXPORT luaopen_LuaXML(lua_State* L) {
+int _EXPORT luaopen_LuaXML_lib(lua_State* L) {
 	static const struct luaL_Reg funcs[] = {
 		{"load", Xml_load},
 		{"eval", Xml_eval},
@@ -410,7 +414,12 @@ int _EXPORT luaopen_LuaXML(lua_State* L) {
 		{"registerCode", Xml_registerCode},
 		{NULL, NULL}
 	};
+
+#if LUA_VERSION_NUM == 501
+	luaL_register(L,"xml",funcs);
+#else
 	luaL_newlib(L,funcs);
+#endif
 	// register default codes:
 	if(!sv_code) {
 		sv_code=(char**)malloc(sv_code_capacity*sizeof(char*));

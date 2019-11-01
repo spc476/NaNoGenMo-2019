@@ -30,22 +30,24 @@ endif
 
 .PHONY: all install uninstall clean
 
-all: LuaXML/LuaXML.so
+all: LuaXML/LuaXML_lib.so
 
 
 install: all
 	$(INSTALL) -d $(DESTDIR)$(LUADIR)
 	$(INSTALL) -d $(DESTDIR)$(LIBDIR)
-	$(INSTALL_PROGRAM) LuaXML/LuaXML.so $(DESTDIR)$(LIBDIR)
-	$(INSTALL_DATA)    Lua/lxpath.lua   $(DESTDIR)$(LUADIR)
+	$(INSTALL_PROGRAM) LuaXML/LuaXML_lib.so $(DESTDIR)$(LIBDIR)
+	$(INSTALL_DATA)    LuaXML/LuaXml.lua    $(DESTDIR)$(LUADIR)
+	$(INSTALL_DATA)    Lua/lxpath.lua       $(DESTDIR)$(LUADIR)
 
 uninstall:
-	$(RM) -r $(DESTDIR)$(LIBDIR)/LuaXML.so
-	$(RM) -r $(DESTDIR)$(LUADIR)/lxpath.lua
+	$(RM) $(DESTDIR)$(LIBDIR)/LuaXML_lib.so
+	$(RM) $(DESTDIR)$(LUADIR)/LuaXml.lua
+	$(RM) $(DESTDIR)$(LUADIR)/lxpath.lua
 
 clean:
 	$(RM) $(shell find . -name '*~')
-	$(RM) LuaXML/LuaXML.so
+	$(RM) LuaXML/LuaXML_lib.so
 
 
 # ===================================================
