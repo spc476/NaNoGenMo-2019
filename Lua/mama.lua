@@ -111,7 +111,7 @@ local LIST  = {}
 generate(our_father,1,{},LIST)
 
 while count < 50000 do
-  local line = LIST[math.random(#LIST)]
+  local line = table.remove(LIST,math.random(#LIST))
   print(line)
   count = count + wordcount:match(line)
 end
