@@ -1,7 +1,15 @@
 
 As of now, I haven't settled upon a theme, other than it probably will use
 Toki Pona in some form.  Any results generated will be in the "results/"
-directory.  So far ...
+directory.  
+
+I should also note that the LuaXML module only works for Lua 5.1.  I updated
+the code to compile cleanly on Lua 5.2 or higher, but it fails to run
+properly due to quirks of the Lua 5.1 module system.  So that, and the
+"getdict.lua" script will need to be run under Lua 5.1 The other Lua scripts
+will run fine under any modern version of Lua.
+
+Results so far ...
 
 results/mama_pi_me_mute.txt
 
