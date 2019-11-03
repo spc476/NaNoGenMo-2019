@@ -299,12 +299,14 @@ int Xml_eval(lua_State *L) {
 			}
 			else return lua_gettop(L);
 		}
-		// set metatable:    
+		// set metatable:
+		// XXX - use of non-standard global here
 		lua_newtable(L);
 		lua_pushliteral(L, "__index");
 		lua_getglobal(L, "xml");
 		lua_settable(L, -3);
-			
+		
+		// XXX - and here as well
 		lua_pushliteral(L, "__tostring"); // set __tostring metamethod
 		lua_getglobal(L, "xml");
 		lua_pushliteral(L,"str");
