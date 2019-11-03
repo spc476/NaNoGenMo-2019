@@ -1,0 +1,148 @@
+ADJECTIVE	ala	no, not, zero
+ADJECTIVE	ale	all; abundant, countless, bountiful, every, plentiful
+ADJECTIVE	ali	all; abundant, countless, bountiful, every, plentiful
+ADJECTIVE	anpa	bowing down, downward, humble, lowly, dependent
+ADJECTIVE	ante	different, altered, changed, other
+ADJECTIVE	awen	enduring, kept, protected, safe, waiting, staying
+ADJECTIVE	ika	bad, negative; non-essential, irrelevant
+ADJECTIVE	jaki	disgusting, obscene, sickly, toxic, unclean, unsanitary
+ADJECTIVE	jelo	yellow, yellowish
+ADJECTIVE	kama	arriving, coming, future, summoned
+ADJECTIVE	ken	possible
+ADJECTIVE	kule	colourful, pigmented, painted
+ADJECTIVE	lape	sleeping, resting
+ADJECTIVE	laso	blue, green
+ADJECTIVE	lete	cold, cool; uncooked, raw
+ADJECTIVE	lili	little, small, short; few; a bit; young
+ADJECTIVE	loje	red, reddish
+ADJECTIVE	moli	dead, dying
+ADJECTIVE	musi	artistic, entertaining, frivolous, playful, recreational
+ADJECTIVE	mute	many, a lot, more, much, several, very
+ADJECTIVE	namako	new, fresh; additional, another, extra
+ADJECTIVE	nasa	unusual, strange; foolish, crazy; drunk, intoxicated
+ADJECTIVE	ni	that, this
+ADJECTIVE	pakala	botched, broken, damaged, harmed, messed up
+ADJECTIVE	pilin	feeling (an emotion, a direct experience)
+ADJECTIVE	pimeja	black, dark, unlit
+ADJECTIVE	pini	ago, completed, ended, finished, past
+ADJECTIVE	pona	good, positive, useful; friendly, peaceful; simple
+ADJECTIVE	pu	interacting with the official Toki Pona book
+ADJECTIVE	sama	same, similar; each other; sibling, peer, fellow
+ADJECTIVE	seli	fire; cooking element, chemical reaction, heat source
+ADJECTIVE	sewi	awe-inspiring, divine, sacred, supernatural
+ADJECTIVE	sike	of one year
+ADJECTIVE	sin	new, fresh; additional, another, extra
+ADJECTIVE	suli	big, heavy, large, long, tall; important; adult
+ADJECTIVE	suwi	sweet, fragrant; cute, innocent, adorable
+ADJECTIVE	taso	only
+ADJECTIVE	tawa	moving
+ADJECTIVE	walo	white, whitish; light-coloured, pale
+ADJECTIVE	wan	unique, united
+ADJECTIVE	wawa	strong, powerful; confident, sure; energetic, intense
+ADJECTIVE	weka	absent, away, ignored
+NOUN	akesi	non-cute animal; reptile, amphibian
+NOUN	ale	abundance, everything, life, universe
+NOUN	ali	abundance, everything, life, universe
+NOUN	esun	market, shop, fair, bazaar, business transaction
+NOUN	ijo	thing, phenomenon, object, matter
+NOUN	ilo	tool, implement, machine, device
+NOUN	insa	centre, content, inside, between; internal organ, stomach
+NOUN	jan	human being, person, somebody
+NOUN	kala	fish, marine animal, sea creature
+NOUN	kasi	plant, vegetation; herb, leaf
+NOUN	kili	fruit, vegetable, mushroom
+NOUN	kiwen	hard object, metal, rock, stone
+NOUN	ko	clay, clinging form, dough, semi-solid, paste, powder
+NOUN	kon	air, breath; essence, spirit; hidden reality, unseen agent
+NOUN	kulupu	community, company, group, nation, society, tribe
+NOUN	kute	ear
+NOUN	lawa	head, mind
+NOUN	len	cloth, clothing, fabric, textile; cover, layer of privacy
+NOUN	linja	long and flexible thing; cord, hair, rope, thread, yarn
+NOUN	lipu	flat object; book, document, card, paper, record, website
+NOUN	luka	arm, hand, tactile organ
+NOUN	lukin	eye
+NOUN	lupa	door, hole, orifice, window
+NOUN	ma	earth, land; outdoors, world; country, territory; soil
+NOUN	mama	parent, ancestor; creator, originator; caretaker, sustainer
+NOUN	mani	money, cash, savings, wealth; large domesticated animal
+NOUN	meli	woman, female, feminine person; wife
+NOUN	mi	I, me, we, us
+NOUN	mije	man, male, masculine person; husband
+NOUN	monsi	back, behind, rear
+NOUN	mun	moon, night sky object, star
+NOUN	mute	quantity
+NOUN	nanpa	numbers
+NOUN	nasin	way, custom, doctrine, method, path, road
+NOUN	nena	bump, button, hill, mountain, nose, protuberance
+NOUN	nimi	name, word
+NOUN	noka	foot, leg, organ of locomotion; bottom, lower part
+NOUN	oko	eye
+NOUN	ona	he, she, it, they
+NOUN	palisa	long hard thing; branch, rod, stick
+NOUN	pan	cereal, grain; barley, corn, oat, rice, wheat; bread, pasta
+NOUN	pilin	heart (physical or emotional)
+NOUN	pipi	bug, insect, ant, spider
+NOUN	poka	hip, side; next to, nearby, vicinity
+NOUN	poki	container, bag, bowl, box, cup, cupboard, drawer, vessel
+NOUN	selo	outer form, outer layer; bark, peel, shell, skin; boundary
+NOUN	sewi	area above, highest part, something elevated
+NOUN	sijelo	body (of person or animal), physical state, torso
+NOUN	sike	round or circular thing; ball, circle, cycle, sphere, wheel
+NOUN	sina	you
+NOUN	sinpin	face, foremost, front, wall
+NOUN	sitelen	image, picture, representation, symbol, mark, writing
+NOUN	soweli	animal, beast, land mammal
+NOUN	suno	sun; light, brightness, glow, radiance, shine; light source
+NOUN	supa	horizontal surface, thing to put or rest something on
+NOUN	telo	water, liquid, fluid, wet substance; beverage
+NOUN	tenpo	time, duration, moment, occasion, period, situation
+NOUN	tomo	indoor space; building, home, house, room
+NOUN	uta	mouth, lips, oral cavity, jaw
+NOUN	waso	bird, flying creature, winged animal
+NUMBER	ale	100
+NUMBER	ali	100
+NUMBER	luka	five
+NUMBER	tu	two
+NUMBER	wan	one
+PARTICLE	a	(emphasis, emotion or confirmation)
+PARTICLE	anu	or
+PARTICLE	e	(before the direct object)
+PARTICLE	en	(between multiple subjects)
+PARTICLE	kin	(emphasis, emotion or confirmation)
+PARTICLE	la	(between the context phrase and the main sentence)
+PARTICLE	li	(between any subject except mi alone or sina alone and its verb; also to introduce a new verb for the same subject)
+PARTICLE	mu	(animal noise or communication)
+PARTICLE	nanpa	-th (ordinal number)
+PARTICLE	o	hey! O! (vocative or imperative)
+PARTICLE	pi	of
+PARTICLE	seme	what? which?
+PARTICLE	taso	but, however
+PRE - VERB	awen	to continue to
+PRE - VERB	kama	to become, manage to, succeed in
+PRE - VERB	ken	to be able to, be allowed to, can, may
+PRE - VERB	lukin	to seek, look for, try to
+PRE - VERB	oko	to seek, look for, try to
+PRE - VERB	sona	to know how to
+PRE - VERB	wile	must, need, require, should, want, wish
+PREPOSITION	kepeken	to use, with, by means of
+PREPOSITION	lon	located at, present at, real, true, existing
+PREPOSITION	sama	as, like
+PREPOSITION	tan	by, from, because of
+PREPOSITION	tawa	going to, toward; for; from the perspective of
+VERB	alasa	to hunt, forage
+VERB	jo	to have, carry, contain, hold
+VERB	kalama	to produce a sound; recite, utter aloud
+VERB	kute	to hear, listen; pay attention to, obey
+VERB	lawa	to control, direct, guide, lead, own, plan, regulate, rule
+VERB	lukin	to look at, see, examine, observe, read, watch
+VERB	moku	to eat, drink, consume, swallow, ingest
+VERB	oko	to look at, see, examine, observe, read, watch
+VERB	olin	to love, have compassion for, respect, show affection to
+VERB	open	to begin, start; open; turn on
+VERB	pali	to do, take action on, work on; build, make, prepare
+VERB	pana	to give, send, emit, provide, put, release
+VERB	sona	to know, be skilled in, be wise about, have information on
+VERB	toki	to communicate, say, speak, say, talk, use language, think
+VERB	unpa	to have sexual or marital relations with
+VERB	utala	to battle, challenge, compete against, struggle against
