@@ -407,19 +407,7 @@ int _EXPORT luaopen_LuaXML_lib(lua_State* L) {
 		{"registerCode", Xml_registerCode},
 		{NULL, NULL}
 	};
-	
-	/*----------------------------------------------------
-	; This will be populated later when LuaXml is loaded.
-	;-----------------------------------------------------*/
-	
-	luaL_newmetatable(L,TYPE_LUAXML);
-	lua_pop(L,1);
-	
-#if LUA_VERSION_NUM == 501
-	luaL_register(L,"xml",funcs);
-#else
-	luaL_newlib(L,funcs);
-#endif
+
 	// register default codes:
 	if(!sv_code) {
 		sv_code=(char**)malloc(sv_code_capacity*sizeof(char*));
@@ -434,5 +422,18 @@ int _EXPORT luaopen_LuaXML_lib(lua_State* L) {
 		sv_code[sv_code_size++]="'";
 		sv_code[sv_code_size++]="&apos;";
 	}
+	
+	/*----------------------------------------------------
+	; This will be populated later when LuaXml is loaded.
+	;-----------------------------------------------------*/
+	
+	luaL_newmetatable(L,TYPE_LUAXML);
+	lua_pop(L,1);
+	
+#if LUA_VERSION_NUM == 501
+	luaL_register(L,"xml",funcs);
+#else
+	luaL_newlib(L,funcs);
+#endif
 	return 1;
 }

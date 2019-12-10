@@ -8,14 +8,15 @@ local _G       = _G
 local _VERSION = _VERSION
 
 if _VERSION == "Lua 5.1" then
-  module("xml")
+  module("LuaXml")
 else
   _ENV         = {}
-  encode       = xml.encode
-  eval         = xml.eval
-  load         = xml.load
-  registerCode = xml.registerCode
 end
+
+encode       = xml.encode
+eval         = xml.eval
+load         = xml.load
+registerCode = xml.registerCode
 
 -- symbolic name for tag index, this allows accessing the tag by var[xml.TAG]
 TAG = 0
