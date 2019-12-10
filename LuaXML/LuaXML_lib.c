@@ -46,9 +46,9 @@ THE SOFTWARE.
 #  define lua_rawlen(L,idx) lua_objlen((L),(idx))
 #endif
 
-static const char ESC=27;
-static const char OPN=28;
-static const char CLS=29;
+#define ESC 27
+#define OPN 28
+#define CLS 29
 
 //--- auxliary functions -------------------------------------------
 
