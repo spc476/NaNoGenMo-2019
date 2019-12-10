@@ -1,3 +1,6 @@
+-- luacheck: globals encode eval load registerCode TAG new append
+-- luacheck: globals tag str save find
+-- luacheck: ignore 611
 
 local xml      = require("LuaXML_lib")
 local debug    = require "debug"
@@ -21,7 +24,7 @@ TAG = 0
 -- sets or returns tag of a LuaXML object
 function tag(var,tag)
   if _G.type(var)~="table" then return end
-  if _G.type(tag)=="nil" then 
+  if _G.type(tag)=="nil" then
     return var[TAG]
   end
   var[TAG] = tag
@@ -29,7 +32,7 @@ end
 
 -- creates a new LuaXML object either by setting the metatable of an existing Lua table or by setting its tag
 function new(arg)
-  if _G.type(arg)=="table" then 
+  if _G.type(arg)=="table" then
 	return arg
   end
   local var={}
@@ -48,15 +51,15 @@ end
 -- converts any Lua var into an XML string
 function str(var,indent,tagValue)
   if _G.type(var)=="nil" then return end
-  local indent = indent or 0
+  indent = indent or 0
   local indentStr=""
-  for i = 1,indent do indentStr=indentStr.."  " end
+  for _ = 1,indent do indentStr=indentStr.."  " end
   local tableStr=""
   
   if _G.type(var)=="table" then
     local tag = var[0] or tagValue or _G.type(var)
     local s = indentStr.."<"..tag
-    for k,v in _G.pairs(var) do -- attributes 
+    for k,v in _G.pairs(var) do -- attributes
       if _G.type(k)=="string" then
         if _G.type(v)=="table" and k~="_M" then --  otherwise recursiveness imminent
           tableStr = tableStr..str(v,indent+1,k)
@@ -71,7 +74,7 @@ function str(var,indent,tagValue)
       s = s..">"..encode(_G.tostring(var[1])).."</"..tag..">\n"
     else
       s = s..">\n"
-      for k,v in _G.ipairs(var) do -- elements
+      for _,v in _G.ipairs(var) do -- elements
         if _G.type(v)=="string" then
           s = s..indentStr.."  "..encode(v).." \n"
         else
@@ -117,7 +120,7 @@ function find(var, tag, attributeKey,attributeValue)
     end
   end
   -- recursively parse subtags:
-  for k,v in _G.ipairs(var) do
+  for _,v in _G.ipairs(var) do
     if _G.type(v)=="table" then
       local ret = find(v, tag, attributeKey,attributeValue)
       if ret ~= nil then return ret end
@@ -128,7 +131,7 @@ end
 if _VERSION == "Lua 5.1" then
   local mt = debug.getregistry().LuaXML
   mt.__tostring = str
-  mt.__index    = _M
+  mt.__index    = _M -- luacheck: ignore
 else
   local mt = debug.getregistry().LuaXML
   mt.__tostring = str
