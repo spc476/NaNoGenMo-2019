@@ -1,5 +1,6 @@
 
 local xml      = require("LuaXML_lib")
+local debug    = require "debug"
 local _G       = _G
 local _VERSION = _VERSION
 
@@ -29,11 +30,9 @@ end
 -- creates a new LuaXML object either by setting the metatable of an existing Lua table or by setting its tag
 function new(arg)
   if _G.type(arg)=="table" then 
-    _G.setmetatable(arg,{__index=xml, __tostring=xml.str})
 	return arg
   end
   local var={}
-  _G.setmetatable(var,{__index=xml, __tostring=xml.str})
   if _G.type(arg)=="string" then var[TAG]=arg end
   return var
 end
@@ -110,12 +109,10 @@ function find(var, tag, attributeKey,attributeValue)
   -- compare this table:
   if tag~=nil then
     if var[0]==tag and ( attributeValue == nil or var[attributeKey]==attributeValue ) then
-      _G.setmetatable(var,{__index=xml, __tostring=xml.str})
       return var
     end
   else
     if attributeValue == nil or var[attributeKey]==attributeValue then
-      _G.setmetatable(var,{__index=xml, __tostring=xml.str})
       return var
     end
   end
@@ -128,6 +125,13 @@ function find(var, tag, attributeKey,attributeValue)
   end
 end
 
-if _VERSION >= "Lua 5.2" then
+if _VERSION == "Lua 5.1" then
+  local mt = debug.getregistry().LuaXML
+  mt.__tostring = str
+  mt.__index    = _M
+else
+  local mt = debug.getregistry().LuaXML
+  mt.__tostring = str
+  mt.__index    = _ENV
   return _ENV
 end

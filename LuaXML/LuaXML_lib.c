@@ -43,8 +43,11 @@ THE SOFTWARE.
 #include <stdlib.h>
 
 #if LUA_VERSION_NUM == 501
-#  define lua_rawlen(L,idx) lua_objlen((L),(idx))
+#  define lua_rawlen(L,idx)      lua_objlen((L),(idx))
+#  define lua_setfuncs(L,reg,up) luaI_openlib((L),NULL,(reg),(up))
 #endif
+
+#define TYPE_LUAXML	"LuaXML"
 
 #define ESC 27
 #define OPN 28
@@ -299,22 +302,10 @@ int Xml_eval(lua_State *L) {
 			}
 			else return lua_gettop(L);
 		}
-		// set metatable:
-		// XXX - use of non-standard global here
-		lua_newtable(L);
-		lua_pushliteral(L, "__index");
-		lua_getglobal(L, "xml");
-		lua_settable(L, -3);
-		
-		// XXX - and here as well
-		lua_pushliteral(L, "__tostring"); // set __tostring metamethod
-		lua_getglobal(L, "xml");
-		lua_pushliteral(L,"str");
-		lua_gettable(L, -2);
-		lua_remove(L, -2);
-		lua_settable(L, -3);			
-		lua_setmetatable(L, -2);
-		
+
+		luaL_getmetatable(L,TYPE_LUAXML);
+		lua_setmetatable(L,-2);
+
 		// parse tag and content:
 		lua_pushnumber(L,0); // use index 0 for storing the tag
 		lua_pushstring(L, Tokenizer_next(tok));
@@ -416,7 +407,14 @@ int _EXPORT luaopen_LuaXML_lib(lua_State* L) {
 		{"registerCode", Xml_registerCode},
 		{NULL, NULL}
 	};
-
+	
+	/*----------------------------------------------------
+	; This will be populated later when LuaXml is loaded.
+	;-----------------------------------------------------*/
+	
+	luaL_newmetatable(L,TYPE_LUAXML);
+	lua_pop(L,1);
+	
 #if LUA_VERSION_NUM == 501
 	luaL_register(L,"xml",funcs);
 #else
