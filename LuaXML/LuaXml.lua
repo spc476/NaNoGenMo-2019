@@ -10,8 +10,7 @@ local _VERSION = _VERSION
 if _VERSION == "Lua 5.1" then
   module("xml")
 else
-  _ENV = {}
-  _G.xml       = _ENV
+  _ENV         = {}
   encode       = xml.encode
   eval         = xml.eval
   load         = xml.load
